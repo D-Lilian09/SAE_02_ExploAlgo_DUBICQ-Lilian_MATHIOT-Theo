@@ -1,3 +1,11 @@
 public class Graph {
-    List<Noeud> maListe = new ArrayList<>();
+
+    List<Noeud> LiNoeud = new ArrayList<>();
+
+    public Graph() {
+        this.LiNoeud = new ArrayList<>();
+    }
+
+
+
 }

@@ -1,10 +1,10 @@
 public class Arc {
     private double poids;
-    private Noeud cible;
+    private String cible;
 
-    public Arc (int p, Noeud n){
+    public Arc (int p, String s){
         this.poids = p;
-        this.cible = n;
+        this.cible = s;
     }
 
 }

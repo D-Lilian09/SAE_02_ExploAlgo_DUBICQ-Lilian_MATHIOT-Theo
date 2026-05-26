@@ -8,4 +8,12 @@ public class Noeud extends Arc{
         this.idt = i;
         this.nom = n;
     }
+
+    public String getIdt() {
+        return idt;
+    }
+
+    public String getNom() {
+        return nom;
+    }
 }

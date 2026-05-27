@@ -5,44 +5,44 @@ public class Dijkstra {
 
     public Valeurs resoudre(Graphe g, String depart) {
 
+        Valeurs resultats = new Valeurs();
         List<Noeud> q = new ArrayList<>();
         List<Noeud> tousLesNoeuds = g.recupNoeud();
-        Noeud noeudDepart = null;
 
         for (Noeud v : tousLesNoeuds) {
-            v.setValeur(Double.POSITIVE_INFINITY);
-            v.setParent(null);
+            resultats.setValeur(v.getIdt(), Double.MAX_VALUE);
+            resultats.setParent(v.getIdt(), null);
             q.add(v);
-            if (v.getIdt().equals(depart)) noeudDepart = v;
         }
-
-        if (noeudDepart != null) {
-            noeudDepart.setValeur(0);}
+        resultats.setValeur(depart, 0);
 
         while (!q.isEmpty()) {
-            Noeud u = trouverMin(q);
+
+            Noeud u = trouverMin(q, resultats);
             q.remove(u);
 
             for (Arc arc : u.getArcs().getLiArc()) {
                 Noeud v = chercherNoeud(tousLesNoeuds, arc.getCible());
-
                 if (v != null && q.contains(v)) {
-                    double d = u.getValeur() + arc.getPoids();
-                    if (d < v.getValeur()) { // Si d < v.valeur
-                        v.setValeur(d);      // v.valeur <- d
-                        v.setParent(u);      // v.parent <- u
+                    double d = resultats.getValeur(u.getIdt()) + arc.getPoids();
+
+                    if (d < resultats.getValeur(v.getIdt())) {
+                        resultats.setValeur(v.getIdt(), d);
+                        resultats.setParent(v.getIdt(), u.getIdt());
                     }
                 }
             }
         }
-
-        return new Valeurs(tousLesNoeuds);
+        return resultats;
     }
 
-    private Noeud trouverMin(List<Noeud> q) {
+    private Noeud trouverMin(List<Noeud> q, Valeurs vls) {
         Noeud min = q.get(0);
         for (Noeud n : q) {
-            if (n.getValeur() < min.getValeur()) min = n;
+            // Comparaison des valeurs stockées dans l'objet Valeurs
+            if (vls.getValeur(n.getIdt()) < vls.getValeur(min.getIdt())) {
+                min = n;
+            }
         }
         return min;
     }
@@ -53,5 +53,6 @@ public class Dijkstra {
         }
         return null;
     }
+
 }
 

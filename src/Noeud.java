@@ -40,6 +40,9 @@ public class Noeud{
         return a + "\n";
     }
 
+    private double valeur;
+    private Noeud parent;
+
     public double getValeur() { return valeur; }
 
     public void setValeur(double v) { this.valeur = v; }

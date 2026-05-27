@@ -1,3 +1,4 @@
+package saealgo;
 public class Principale{
     public static void main (String Args[]){
 

@@ -23,7 +23,7 @@ public class Principale{
         figure1.addArc("d","b",23);
         figure1.addArc("e","d",43);
 
-
+        System.out.println(figure1.toString());
 
 
 

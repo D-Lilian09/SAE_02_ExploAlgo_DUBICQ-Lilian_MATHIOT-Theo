@@ -26,4 +26,17 @@ public class Noeud{
     public Arcs getArcs() {
         return LiArcs;
     }
+
+    public String toString(){
+        String a = this.nom + " - > ";
+        List<Arc> liste = this.LiArcs.getLiArc();
+
+        for (int i = 0; i < liste.size(); i++) {
+            Arc currentArc = liste.get(i);
+            String nomCible = currentArc.getCible().toUpperCase();
+
+            a = a + nomCible + "(" + (int)currentArc.getPoids() + ") ";
+        }
+        return a + "\n";
+    }
 }

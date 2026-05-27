@@ -14,4 +14,12 @@ public class Arc {
         this.cible = s;
     }
 
+    public String getCible(){
+        return this.cible;
+    }
+
+    public double getPoids(){
+        return this.poids;
+    }
+
 }

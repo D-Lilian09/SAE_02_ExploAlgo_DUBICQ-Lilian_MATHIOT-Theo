@@ -33,4 +33,12 @@ public class GrapheListe implements Graphe {
         this.liNoeud.add(n);
     }
 
+    public String toString() {
+        String a = "";
+        for (int i = 0; i < this.liNoeud.size(); i++) {
+            // Remplacement de ths.liNoeud[i] par .get(i)
+            a = a + this.liNoeud.get(i).toString();
+        }
+        return a;
+    }
 }

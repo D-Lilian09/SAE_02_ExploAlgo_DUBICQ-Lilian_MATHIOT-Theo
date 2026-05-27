@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MainTransport">
+    <output-path>$PROJECT_DIR$/out/artifacts/MainTransport</output-path>
+    <root id="archive" name="MainTransport.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/STAN.GTFS/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="SAE-Algo" />
+    </root>
+  </artifact>
+</component>

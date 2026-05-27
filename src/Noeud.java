@@ -3,12 +3,13 @@ import java.util.ArrayList;
 
 
 
-
 public class Noeud{
 
     private String idt;
     private String nom;
     private Arcs LiArcs = new Arcs();
+    private double valeur;
+    private Noeud parent;
 
     public Noeud(String i, String n){
         this.idt = i;
@@ -26,4 +27,12 @@ public class Noeud{
     public Arcs getArcs() {
         return LiArcs;
     }
+
+    public double getValeur() { return valeur; }
+
+    public void setValeur(double v) { this.valeur = v; }
+
+    public Noeud getParent() { return parent; }
+    
+    public void setParent(Noeud p) { this.parent = p; }
 }

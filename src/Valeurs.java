@@ -93,4 +93,21 @@ public class Valeurs {
 
     }
 
+    public List<String> calculerChemin(String destination) {
+        List<String> chemin = new ArrayList<>();
+        String courant = destination;
+
+        while (courant != null) {
+            chemin.add(courant);
+            courant = this.getParent(courant);
+        }
+
+        if (chemin.isEmpty() || (chemin.size() == 1 && this.getValeur(destination) == Double.MAX_VALUE)) {
+            return new ArrayList<>();
+        }
+
+        Collections.reverse(chemin);
+        return chemin;
+    }
+
 }

@@ -1,7 +1,14 @@
+package saealgo;
 import java.util.List;
 
 public class BellmanFord {
 
+    /**
+     *
+     * @param g
+     * @param depart
+     * @return
+     */
     public Valeurs resoudre(Graphe g, String depart) {
         Valeurs resultats = new Valeurs();
         List<Noeud> tousLesNoeuds = g.recupNoeud();
@@ -10,7 +17,6 @@ public class BellmanFord {
             resultats.setValeur(v.getIdt(), Double.MAX_VALUE);
             resultats.setParent(v.getIdt(), null);
         }
-
         resultats.setValeur(depart, 0.0);
         boolean valeurModifiee = true;
         while (valeurModifiee == true) {

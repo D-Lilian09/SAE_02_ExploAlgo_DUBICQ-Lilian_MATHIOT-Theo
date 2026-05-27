@@ -97,6 +97,11 @@ public class Valeurs {
         return res;
     }
 
+    /**
+     *
+     * @param destination
+     * @return
+     */
     public List<String> calculerChemin(String destination) {
         List<String> chemin = new ArrayList<>();
         String courant = destination;

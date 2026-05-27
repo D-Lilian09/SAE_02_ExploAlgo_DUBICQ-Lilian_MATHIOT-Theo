@@ -9,13 +9,25 @@ import java.util.ArrayList;
 public class GrapheListe implements Graphe {
 
     public List<Noeud> liNoeud = new ArrayList<>();
+
+    /**
+     *
+     */
     public GrapheListe() {
         this.liNoeud = new ArrayList<>();
     }
 
-    @Override
+    /**
+     *
+     * @return
+     */
     public List<Noeud> recupNoeud(){return this.liNoeud;}
 
+    /**
+     *
+     * @param n
+     * @return
+     */
     public Arcs recupAdj(Noeud n) {
         if (n == null) {
             return new Arcs();
@@ -23,6 +35,12 @@ public class GrapheListe implements Graphe {
         return n.getArcs();
     }
 
+    /**
+     *
+     * @param sourceId
+     * @param cibleId
+     * @param poids
+     */
     public void addArc(String sourceId, String cibleId, double poids) {
         for (Noeud n : liNoeud) {
             if (n.getIdt().equals(sourceId)) {
@@ -31,10 +49,18 @@ public class GrapheListe implements Graphe {
         }
     }
 
+    /**
+     *
+     * @param n
+     */
     public void addNoeud(Noeud n) {
         this.liNoeud.add(n);
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString() {
         String a = "";
         for (int i = 0; i < this.liNoeud.size(); i++) {

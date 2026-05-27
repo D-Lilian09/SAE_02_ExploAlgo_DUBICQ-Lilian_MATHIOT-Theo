@@ -1,6 +1,7 @@
+package saealgo;
 import java.util.ArrayList;
 import java.util.List;
-package saealgo;
+
 
 public class Dijkstra {
 

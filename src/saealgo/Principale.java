@@ -1,6 +1,6 @@
 package saealgo;
 public class Principale{
-    public static void main (String Args[]){
+    public static void main (String[] args){
 
         GrapheListe figure1 = new GrapheListe();
 

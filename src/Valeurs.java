@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.List;
@@ -82,30 +83,26 @@ public class Valeurs {
      */
     public String toString() {
         String res = "";
-        // pour chaque noeud
-        for (String s : this.valeur.keySet()) {
-            // ajoute la valeur et le noeud parent
+        List<String> cles = new ArrayList<>(this.valeur.keySet());
+        for (int i = 0; i < cles.size(); i = i + 1) {
+            String s = cles.get(i);
             Double valeurNoeud = valeur.get(s);
             String noeudParent = parent.get(s);
-            res += s + " ->  V:" + valeurNoeud + " p:" + noeudParent + "\n";
+            res = res + s + " ->  V=" + valeurNoeud + " p=" + noeudParent + "\n";
         }
         return res;
-
     }
 
     public List<String> calculerChemin(String destination) {
         List<String> chemin = new ArrayList<>();
         String courant = destination;
-
         while (courant != null) {
             chemin.add(courant);
             courant = this.getParent(courant);
         }
-
-        if (chemin.isEmpty() || (chemin.size() == 1 && this.getValeur(destination) == Double.MAX_VALUE)) {
+        if (chemin.isEmpty() == true || (chemin.size() == 1 && this.getValeur(destination) == Double.MAX_VALUE)) {
             return new ArrayList<>();
         }
-
         Collections.reverse(chemin);
         return chemin;
     }

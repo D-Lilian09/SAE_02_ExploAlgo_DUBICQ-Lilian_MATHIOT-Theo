@@ -39,4 +39,12 @@ public class Noeud{
         }
         return a + "\n";
     }
+
+    public double getValeur() { return valeur; }
+
+    public void setValeur(double v) { this.valeur = v; }
+
+    public Noeud getParent() { return parent; }
+
+    public void setParent(Noeud p) { this.parent = p; }
 }

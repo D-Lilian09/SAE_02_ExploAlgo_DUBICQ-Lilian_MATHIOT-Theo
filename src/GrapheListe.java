@@ -29,4 +29,8 @@ public class GrapheListe implements Graphe {
         }
     }
 
+    public void addNoeud(Noeud n) {
+        this.liNoeud.add(n);
+    }
+
 }

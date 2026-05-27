@@ -1,10 +1,14 @@
-import java.util.ArrayList;
-import java.util.Collections; 
-import java.util.List;
-public class MainDijkstra{
-    public static void main (String Args[]) {
+package saealgo;
 
-        GrapheListe figure1 = new GrapheListe();
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+
+public class MainDijkstra{
+    public static void main (String[] args) {
+
+        saealgo.GrapheListe figure1 = new GrapheListe();
 
         Noeud a = new Noeud("a", "A");
         Noeud b = new Noeud("b", "B");

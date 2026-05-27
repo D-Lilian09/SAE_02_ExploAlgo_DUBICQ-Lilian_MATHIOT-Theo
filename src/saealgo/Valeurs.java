@@ -1,8 +1,12 @@
+package saealgo;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.List;
+
+
 
 /**
  * Classe fournie, permet de stocker des valeurs associées au noeud et

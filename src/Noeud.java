@@ -1,8 +1,14 @@
-public class Noeud extends Arc{
+import java.util.List;
+import java.util.ArrayList;
+
+
+
+
+public class Noeud{
 
     private String idt;
     private String nom;
-    private List<Arc> LiArc = new ArrayList<>();
+    private Arcs LiArcs = new Arcs();
 
     public Noeud(String i, String n){
         this.idt = i;
@@ -15,5 +21,9 @@ public class Noeud extends Arc{
 
     public String getNom() {
         return nom;
+    }
+
+    public Arcs getArcs() {
+        return LiArcs;
     }
 }

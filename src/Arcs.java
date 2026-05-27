@@ -1,3 +1,9 @@
+import java.util.List;
+import java.util.ArrayList;
+
+
+
+
 public class Arcs {
     private List<Arc> LiArc = new ArrayList<>();
 
@@ -7,5 +13,9 @@ public class Arcs {
 
     public List<Arc> getLiArc() {
         return LiArc;
+    }
+
+    public void ajouterArc(Arc a) {
+        this.LiArc.add(a);
     }
 }

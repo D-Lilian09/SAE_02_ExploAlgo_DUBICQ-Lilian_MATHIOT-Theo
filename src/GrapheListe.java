@@ -6,8 +6,13 @@ public class GrapheListe implements Graph {
 
     public List<Noeud> recupNoeud{return this.LiNoeud}
 
-    public Arcs recupAdj(String n){
-        
+
+    public ListeAdjacence recupAdj(String noeud) {
+        Noeud n = this.noeuds.get(noeud);
+        if (n == null) {
+            return new ListeAdjacence();
+        }
+        return n.getLiArcs();
     }
 
 

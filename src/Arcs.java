@@ -5,4 +5,7 @@ public class Arcs {
         this.LiArc = new ArrayList<>();
     }
 
+    public List<Arc> getLiArc() {
+        return LiArc;
+    }
 }
